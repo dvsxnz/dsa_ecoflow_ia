@@ -1,15 +1,6 @@
-# EcoFlow - Cooperativa de Reciclagem
+# EcoFlow IA - Prompt para TCC
 
-Site em ReactJS com Vite para apresentar o projeto EcoFlow, uma cooperativa escolar de reciclagem que transforma resíduos em artesanatos sustentáveis.
-
-## O que o site contém
-
-- Página inicial institucional da EcoFlow.
-- Catálogo demonstrativo de artesanatos reciclados.
-- Indicadores de impacto ambiental e social.
-- Processo de coleta, triagem, produção e venda solidária.
-- Trilha de oficinas educativas.
-- Formulário demonstrativo para coleta, compra ou participação.
+Site em ReactJS com Vite criado para apresentar um prompt refinado e uma pipeline de sprints para o TCC EcoFlow, uma cooperativa de reciclagem e artesanato sustentável.
 
 ## Tecnologias
 

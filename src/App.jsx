@@ -1,187 +1,161 @@
 import React from 'react'
 
-const products = [
+const sprintPlan = [
   {
-    name: 'Cachepô de garrafa PET',
-    price: 'R$ 18,00',
-    tag: 'Decoração',
-    description: 'Peça pintada à mão para plantas pequenas, produzida com garrafas reaproveitadas.',
-    emoji: '🪴',
+    week: 'Sprint 0',
+    title: 'Alinhamento e prompt mestre',
+    period: 'Semana 1',
+    tasks: [
+      'Definir escopo do TCC, público-alvo e proposta de valor da cooperativa EcoFlow.',
+      'Refinar o prompt em duas etapas: IA inicial e validação final no ChatGPT/Codex.',
+      'Criar repositório GitHub, quadro Kanban e padrão de documentação do grupo.',
+    ],
   },
   {
-    name: 'Caderno EcoFlow',
-    price: 'R$ 24,00',
-    tag: 'Papel reciclado',
-    description: 'Caderno artesanal com capa de papelão reaproveitado e folhas selecionadas.',
-    emoji: '📒',
+    week: 'Sprint 1',
+    title: 'Pesquisa, requisitos e protótipo',
+    period: 'Semanas 2 e 3',
+    tasks: [
+      'Entrevistar usuários, registrar dores e mapear fluxos da cooperativa de reciclagem.',
+      'Escrever requisitos funcionais e não funcionais com critérios de aceite.',
+      'Construir wireframes mobile-first para alunos que desenvolvem pelo celular.',
+    ],
   },
   {
-    name: 'Luminária de vidro',
-    price: 'R$ 35,00',
-    tag: 'Iluminação',
-    description: 'Luminária decorativa feita com potes de vidro, barbante e lâmpada LED.',
-    emoji: '💡',
+    week: 'Sprint 2',
+    title: 'Frontend ReactJS com Vite',
+    period: 'Semanas 4 a 6',
+    tasks: [
+      'Implementar landing page, catálogo de artesanatos reciclados e formulário de contato.',
+      'Criar componentes reutilizáveis, rotas e identidade visual sustentável.',
+      'Preparar build para deploy no Vercel e revisar acessibilidade básica.',
+    ],
+  },
+  {
+    week: 'Sprint 3',
+    title: 'API, banco e integração',
+    period: 'Semanas 7 a 10',
+    tasks: [
+      'Modelar SQL Server para produtos, pedidos, oficinas, usuários e coletas.',
+      'Desenvolver endpoints em Spring Boot Java com validações e documentação.',
+      'Integrar frontend com API usando dados mockados quando a infraestrutura faltar.',
+    ],
+  },
+  {
+    week: 'Sprint 4',
+    title: 'Mobile, testes e apresentação',
+    period: 'Semanas 11 a 14',
+    tasks: [
+      'Criar versão mobile em React Native Expo para consulta rápida do catálogo.',
+      'Executar testes, corrigir bugs, gravar evidências e montar roteiro de apresentação.',
+      'Publicar GitHub, Vercel e materiais finais para entrega de outubro.',
+    ],
   },
 ]
 
-const processSteps = [
-  'Coleta seletiva com alunos, famílias e parceiros do bairro.',
-  'Triagem dos materiais por tipo, condição e potencial de reutilização.',
-  'Criação de artesanatos em oficinas colaborativas e sustentáveis.',
-  'Venda solidária para financiar novas oficinas e ações ambientais.',
-]
-
-const impactMetrics = [
-  { value: '180 kg', label: 'resíduos desviados do descarte comum' },
-  { value: '42', label: 'peças artesanais produzidas no semestre' },
-  { value: '13 h/a', label: 'semanais para evolução técnica do TCC' },
-]
-
-const workshops = [
-  'Introdução à reciclagem criativa',
-  'Artesanato com PET, vidro e papelão',
-  'Precificação e catálogo digital',
-  'Apresentação final e impacto social',
+const promptBlocks = [
+  {
+    label: 'Papel da IA',
+    text: 'Atue como gerente de projeto, arquiteto de software e professor orientador de TCC para uma turma de ensino médio técnico em Informática.',
+  },
+  {
+    label: 'Objetivo',
+    text: 'Gerar uma pipeline completa para o projeto EcoFlow: cooperativa de reciclagem que transforma resíduos em artesanato, com site em ReactJS + Vite, aplicativo Expo, API Spring Boot e banco SQL Server.',
+  },
+  {
+    label: 'Restrições',
+    text: 'Considere que muitos estudantes usam apenas celular e que a turma possui cerca de 13 horas/aula semanais de 45 minutos, priorizando atividades possíveis em aula, documentação simples e tarefas pequenas por integrante.',
+  },
+  {
+    label: 'Saída esperada',
+    text: 'Entregue backlog, sprints, papéis da equipe, critérios de aceite, riscos, evidências e plano de deploy no Vercel, GitHub e apresentação final em outubro.',
+  },
 ]
 
 function App() {
   return (
     <main>
-      <header className="hero" id="inicio">
-        <nav className="nav" aria-label="Navegação principal">
-          <a className="brand" href="#inicio" aria-label="EcoFlow início">
-            <span>♻️</span>
-            EcoFlow
-          </a>
-          <div className="nav__links">
-            <a href="#produtos">Produtos</a>
-            <a href="#processo">Processo</a>
-            <a href="#oficinas">Oficinas</a>
-            <a href="#contato">Contato</a>
+      <section className="hero" aria-labelledby="page-title">
+        <div className="hero__content">
+          <p className="eyebrow">ReactJS + Vite • TCC • Inteligência Artificial</p>
+          <h1 id="page-title">Prompt refinado para criar o TCC EcoFlow</h1>
+          <p className="hero__lead">
+            Um guia visual para transformar uma ideia sustentável em uma pipeline de
+            desenvolvimento colaborativa, organizada por sprints e pronta para deploy no Vercel.
+          </p>
+          <div className="hero__actions">
+            <a href="#prompt" className="button button--primary">Ver prompt</a>
+            <a href="#sprints" className="button button--secondary">Planejar sprints</a>
           </div>
-        </nav>
-
-        <section className="hero__grid" aria-labelledby="hero-title">
-          <div className="hero__content">
-            <p className="eyebrow">Cooperativa escolar de reciclagem</p>
-            <h1 id="hero-title">Transformamos resíduos em artesanato com propósito.</h1>
-            <p className="hero__lead">
-              A EcoFlow conecta educação ambiental, tecnologia e geração de renda por meio de
-              peças artesanais feitas com materiais recicláveis coletados na comunidade.
-            </p>
-            <div className="hero__actions">
-              <a className="button button--primary" href="#produtos">Conhecer catálogo</a>
-              <a className="button button--secondary" href="#contato">Agendar coleta</a>
-            </div>
-          </div>
-
-          <aside className="hero__card" aria-label="Resumo de impacto EcoFlow">
-            <span className="hero__icon">🌿</span>
-            <h2>Impacto local</h2>
-            <p>
-              Cada peça evita descarte, incentiva consumo consciente e fortalece o TCC técnico
-              desenvolvido pelos estudantes.
-            </p>
-            <div className="hero__badge">Projeto pronto para GitHub e Vercel</div>
-          </aside>
-        </section>
-      </header>
-
-      <section className="section metrics" aria-label="Indicadores de impacto">
-        {impactMetrics.map((metric) => (
-          <article className="metric" key={metric.label}>
-            <strong>{metric.value}</strong>
-            <span>{metric.label}</span>
-          </article>
-        ))}
+        </div>
+        <aside className="hero__card" aria-label="Resumo do projeto">
+          <span className="hero__icon">♻️</span>
+          <h2>EcoFlow</h2>
+          <p>Cooperativa escolar de reciclagem, artesanato, impacto social e tecnologia.</p>
+          <dl>
+            <div><dt>Entrega</dt><dd>Outubro</dd></div>
+            <div><dt>Carga semanal</dt><dd>9h45</dd></div>
+            <div><dt>Deploy</dt><dd>Vercel</dd></div>
+          </dl>
+        </aside>
       </section>
 
-      <section className="section" id="produtos" aria-labelledby="products-title">
-        <div className="section__heading">
-          <p className="section__tag">Catálogo sustentável</p>
-          <h2 id="products-title">Artesanatos reciclados em destaque</h2>
-          <p>
-            Produtos pensados para decoração, estudo e presentes conscientes. Os valores são
-            sugestões para simulação do TCC e podem ser ajustados pelo grupo.
-          </p>
+      <section className="section" id="prompt" aria-labelledby="prompt-title">
+        <p className="section__tag">Prompt mestre</p>
+        <h2 id="prompt-title">Comando final para usar no ChatGPT e Codex</h2>
+        <div className="prompt-card">
+          {promptBlocks.map((block) => (
+            <article key={block.label}>
+              <h3>{block.label}</h3>
+              <p>{block.text}</p>
+            </article>
+          ))}
         </div>
-        <div className="product-grid">
-          {products.map((product) => (
-            <article className="product-card" key={product.name}>
-              <div className="product-card__media">{product.emoji}</div>
-              <span>{product.tag}</span>
-              <h3>{product.name}</h3>
-              <p>{product.description}</p>
-              <strong>{product.price}</strong>
+        <blockquote>
+          “Crie um plano de TCC para o EcoFlow com backlog priorizado, sprints, entregáveis,
+          divisão de papéis, tecnologias, critérios de aceite, riscos e evidências. O plano deve
+          ser simples, mobile-first, viável para alunos com pouco computador e pronto para gerar
+          um projeto ReactJS com Vite publicável no Vercel.”
+        </blockquote>
+      </section>
+
+      <section className="section section--alt" id="sprints" aria-labelledby="sprints-title">
+        <p className="section__tag">Pipeline do projeto</p>
+        <h2 id="sprints-title">Sprints de desenvolvimento em equipe</h2>
+        <div className="timeline">
+          {sprintPlan.map((sprint) => (
+            <article className="sprint-card" key={sprint.week}>
+              <div>
+                <span>{sprint.week}</span>
+                <small>{sprint.period}</small>
+              </div>
+              <h3>{sprint.title}</h3>
+              <ul>
+                {sprint.tasks.map((task) => <li key={task}>{task}</li>)}
+              </ul>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="section section--dark" id="processo" aria-labelledby="process-title">
-        <div className="section__heading">
-          <p className="section__tag">Como funciona</p>
-          <h2 id="process-title">Da coleta ao produto final</h2>
-          <p>
-            A operação foi organizada em etapas simples para caber na rotina escolar, nos horários
-            de aula técnica e também no acompanhamento por celular.
-          </p>
-        </div>
-        <ol className="steps">
-          {processSteps.map((step, index) => (
-            <li key={step}>
-              <span>{String(index + 1).padStart(2, '0')}</span>
-              <p>{step}</p>
-            </li>
-          ))}
-        </ol>
-      </section>
-
-      <section className="section split" id="oficinas" aria-labelledby="workshops-title">
+      <section className="section grid" aria-labelledby="evidence-title">
         <div>
-          <p className="section__tag">Educação ambiental</p>
-          <h2 id="workshops-title">Oficinas para aprender produzindo</h2>
+          <p className="section__tag">Evidências</p>
+          <h2 id="evidence-title">O que entregar para comprovar evolução</h2>
           <p>
-            As oficinas orientam a turma desde a sensibilização ambiental até a criação do catálogo
-            digital, unindo empreendedorismo, design e desenvolvimento de sistemas.
+            Cada sprint deve gerar evidências simples: prints do Kanban, commits no GitHub,
+            links do Vercel, fotos das aulas, protótipos, testes e atas rápidas de decisão.
           </p>
         </div>
-        <div className="workshop-card">
-          <h3>Trilha de oficinas</h3>
+        <div className="checklist">
+          <h3>Checklist final</h3>
           <ul>
-            {workshops.map((workshop) => <li key={workshop}>{workshop}</li>)}
+            <li>Repositório público no GitHub com README.</li>
+            <li>Site ReactJS + Vite publicado no Vercel.</li>
+            <li>Backlog e sprints documentados.</li>
+            <li>Apresentação com problema, solução, demo e próximos passos.</li>
           </ul>
         </div>
-      </section>
-
-      <section className="section contact" id="contato" aria-labelledby="contact-title">
-        <div className="contact__content">
-          <p className="section__tag">Participe</p>
-          <h2 id="contact-title">Doe materiais ou encomende uma peça EcoFlow</h2>
-          <p>
-            Separe garrafas PET, potes de vidro, papelão e papéis limpos. A equipe EcoFlow pode
-            registrar sua coleta, orientar o descarte correto e apresentar opções de artesanato.
-          </p>
-        </div>
-        <form className="contact__form" aria-label="Formulário demonstrativo de contato EcoFlow">
-          <label>
-            Nome
-            <input type="text" name="name" placeholder="Seu nome" />
-          </label>
-          <label>
-            Interesse
-            <select name="interest" defaultValue="coleta">
-              <option value="coleta">Agendar coleta</option>
-              <option value="produto">Comprar produto</option>
-              <option value="oficina">Participar de oficina</option>
-            </select>
-          </label>
-          <label>
-            Mensagem
-            <textarea name="message" rows="4" placeholder="Conte como deseja colaborar" />
-          </label>
-          <button className="button button--primary" type="button">Enviar demonstração</button>
-        </form>
       </section>
     </main>
   )
